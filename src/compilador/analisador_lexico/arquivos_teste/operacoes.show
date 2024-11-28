@@ -1,0 +1,9 @@
+numero1 : 5
+numero2 RECEBA 10
+
+numero3 = numero1 + numero2
+
+teste : numero3 == 15
+verdade RECEBA numero3 > 10
+
+maiorIgualAQuinze : numero3 >= 15

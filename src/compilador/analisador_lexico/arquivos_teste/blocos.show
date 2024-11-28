@@ -1,0 +1,17 @@
+"
+O programa comeca com uma string
+"
+
+idade RECEBA 99
+
+SE (idade > 50) {
+    ESCREVA("Idoso")
+    idoso : verdadeiro
+}
+
+contador : 0
+
+ENQUANTO (idoso E contador < 5) {
+    ESCREVA("Idoso contador")
+    contador : contador + 1
+}

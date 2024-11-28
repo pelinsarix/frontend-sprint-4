@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./prisma:/app/prisma
+    environment:
+      - DATABASE_URL=file:/app/prisma/data/sqlite.db
+    command: sh -c "/app/entrypoint.sh"

@@ -1,0 +1,35 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:/app/prisma/data/sqlite.db"
+}
+
+generator client {
+  provider = "prisma-client-py"
+}
+
+model Patient {
+  id      Int      @id @default(autoincrement())
+  name    String
+  age     Int
+  status  String
+  exercises ExerciseExecution[]
+}
+
+model Exercise {
+  id         Int                   @id @default(autoincrement())
+  name       String
+  path       String?
+  youtube_link String?
+  instructions String
+  executions ExerciseExecution[]
+}
+
+model ExerciseExecution {
+  id             Int      @id @default(autoincrement())
+  patient_id     Int
+  exercise_id    Int
+  result         String
+  execution_date DateTime
+  patient        Patient @relation(fields: [patient_id], references: [id])
+  exercise       Exercise @relation(fields: [exercise_id], references: [id])
+}

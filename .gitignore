@@ -1,0 +1,7 @@
+.vscode
+target
+*.pdf
+env/
+
+*.pyc
+config.local.json

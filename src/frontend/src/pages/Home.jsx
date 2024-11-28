@@ -70,11 +70,16 @@ const Cards = styled.div`
  * @returns {JSX.Element} O layout da página inicial.
  */
 const Home = () => {
+
+    const handleGoToIDE = () => {
+        window.location.href = "/ide";
+    }
+
     return (
         <ContainerHome>
             <BlocoMain>
                 <h1>Avaliações</h1>
-                <Botao>Adicionar +</Botao>
+                <Botao onClick={handleGoToIDE}>Adicionar +</Botao>
             </BlocoMain>
             <Cards>
                 <CardExercicios />

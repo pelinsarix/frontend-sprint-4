@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import CardExercicios from "../components/CardExercicios.jsx";
+import { useNavigate } from "react-router-dom"; // Importando o hook de navegação
 
-/**
- * Container principal da página, utilizado para centralizar os componentes.
- */
 const ContainerHome = styled.div`
     display: flex;
     flex-direction: column;
@@ -11,12 +9,8 @@ const ContainerHome = styled.div`
     align-items: center;
 `;
 
-/**
- * Bloco que contém o título da seção e o botão de ação. 
- * Responsável por organizar a área do cabeçalho da página.
- */
 const BlocoMain = styled.div`
-    width: 90dvw;
+    width: 90vw; /* Corrigido dvw para vw */
     height: 20vh;
     display: flex;
     justify-content: space-between;
@@ -29,9 +23,6 @@ const BlocoMain = styled.div`
     }
 `;
 
-/**
- * Botão estilizado com animação de hover. Usado para adicionar novas avaliações ou interagir com a interface.
- */
 const Botao = styled.button`
     background-color: white;
     border: none;
@@ -52,10 +43,6 @@ const Botao = styled.button`
     }
 `;
 
-/**
- * Container para os cartões de exercícios, com layout flexível.
- * Organiza os itens de forma espaçada entre si.
- */
 const Cards = styled.div`
     width: 90vw;
     display: flex;
@@ -63,17 +50,12 @@ const Cards = styled.div`
     align-items: center;
 `;
 
-/**
- * Componente principal da página inicial. Exibe seções de avaliações e exercícios, 
- * cada uma com seu respectivo título e uma lista de cartões.
- * 
- * @returns {JSX.Element} O layout da página inicial.
- */
 const Home = () => {
+    const navigate = useNavigate(); // Hook para navegação
 
     const handleGoToIDE = () => {
-        window.location.href = "/ide";
-    }
+        navigate("/ide"); // Usando React Router para navegar
+    };
 
     return (
         <ContainerHome>
@@ -96,6 +78,6 @@ const Home = () => {
             </Cards>
         </ContainerHome>
     );
-}
+};
 
 export default Home;
